@@ -1,13 +1,21 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Github, Package, Truck, Utensils, GraduationCap, Globe, Languages, Code } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
+
+import logixshuvoImg from "../assets/projects/logix.webp";
+import shuvoBitesImg from "@/assets/projects/shuvobites.webp";
+import stem from "@/assets/projects/stem.webp";
+import shaheen from "../assets/projects/shaheen.webp";
+import ia from "../assets/projects/ia.webp";
+import cp from "../assets/projects/cp.webp";
 
 const projects = [
   {
     title: "LogiXShuvo",
-    description: "Modern MERN stack application that streamlines parcel booking, tracking, and management. Role-based access for admins, deliverymen, and customers.",
-    icon: Truck,
+    description:
+      "Modern MERN stack application that streamlines parcel booking, tracking, and management. Role-based access for admins, deliverymen, and customers.",
+    image: logixshuvoImg,
     tags: ["React", "Node.js", "MongoDB", "Express"],
     links: [
       { label: "Live Demo", url: "#" },
@@ -18,8 +26,9 @@ const projects = [
   },
   {
     title: "Shuvo Bites",
-    description: "Restaurant management system featuring orders, reservations, menu management, and staff scheduling with a modern interface.",
-    icon: Utensils,
+    description:
+      "Restaurant management system featuring orders, reservations, menu management, and staff scheduling with a modern interface.",
+    image: shuvoBitesImg,
     tags: ["React", "Node.js", "MongoDB", "Tailwind"],
     links: [
       { label: "Live Demo", url: "#" },
@@ -29,8 +38,9 @@ const projects = [
   },
   {
     title: "EdTech",
-    description: "Client project showcasing a youth-led initiative empowering girls through STEM education with modern responsive UI.",
-    icon: GraduationCap,
+    description:
+      "Client project showcasing a youth-led initiative empowering girls through STEM education with modern responsive UI.",
+    image: stem,
     tags: ["React", "Responsive", "Modern UI"],
     links: [
       { label: "Live Demo", url: "#" },
@@ -40,8 +50,9 @@ const projects = [
   },
   {
     title: "International Affairs DIU",
-    description: "Ongoing web project showcasing international programs, partnerships, and exchange opportunities with modern responsive design.",
-    icon: Globe,
+    description:
+      "Ongoing web project showcasing international programs, partnerships, and exchange opportunities with modern responsive design.",
+    image: ia,
     tags: ["React", "Tailwind", "Responsive"],
     links: [
       { label: "Live Demo", url: "#" },
@@ -50,9 +61,10 @@ const projects = [
     gradient: "from-violet-500 to-violet-500/50",
   },
   {
-    title: "Shuvolingo",
-    description: "Language learning platform where users can find tutors, view profiles, book sessions, manage bookings, and add tutorials.",
-    icon: Languages,
+    title: "Shaheen",
+    description:
+      "Language learning platform where users can find tutors, view profiles, book sessions, manage bookings, and add tutorials.",
+    image: shaheen,
     tags: ["React", "MongoDB", "Firebase Auth"],
     links: [
       { label: "Live Demo", url: "#" },
@@ -62,17 +74,22 @@ const projects = [
   },
   {
     title: "Codeforces Problem Solving",
-    description: "Collection of Codeforces solutions demonstrating proficiency in algorithms and data structures for competitive programming.",
-    icon: Code,
+    description:
+      "Collection of Codeforces solutions demonstrating proficiency in algorithms and data structures for competitive programming.",
+    image: cp,
     tags: ["C++", "Algorithms", "DSA"],
-    links: [
-      { label: "Repo", url: "#" },
-    ],
+    links: [{ label: "Repo", url: "#" }],
     gradient: "from-amber-500 to-amber-500/50",
   },
 ];
 
-const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {
+const ProjectCard = ({
+  project,
+  index,
+}: {
+  project: (typeof projects)[0];
+  index: number;
+}) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -85,11 +102,19 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
       whileHover={{ y: -8, transition: { duration: 0.3 } }}
       className="glass-card overflow-hidden group"
     >
-      {/* Project Image/Icon Header */}
-      <div className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center relative overflow-hidden`}>
-        <div className="absolute inset-0 bg-black/20" />
-        <project.icon size={64} className="text-white/80 relative z-10 group-hover:scale-110 transition-transform duration-500" />
-        <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+      {/* Project Image Header */}
+      <div className=" relative overflow-hidden">
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover object-center
+             group-hover:scale-110 transition-transform duration-500"
+        />
+
+        {/* Gradient Overlay */}
+        <div
+          className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`}
+        />
       </div>
 
       {/* Content */}
@@ -125,7 +150,11 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
               whileHover={{ x: 3 }}
               whileTap={{ scale: 0.95 }}
             >
-              {link.label.includes("Repo") ? <Github size={14} /> : <ExternalLink size={14} />}
+              {link.label.includes("Repo") ? (
+                <Github size={14} />
+              ) : (
+                <ExternalLink size={14} />
+              )}
               {link.label}
             </motion.a>
           ))}
@@ -141,8 +170,11 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-24 relative">
-      <div className="floating-blob w-96 h-96 bg-accent/10 top-1/2 right-0" style={{ animationDelay: "-12s" }} />
-      
+      <div
+        className="floating-blob w-96 h-96 bg-accent/10 top-1/2 right-0"
+        style={{ animationDelay: "-12s" }}
+      />
+
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
           ref={headerRef}
@@ -151,12 +183,15 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-mono text-sm mb-4 block">My work</span>
+          <span className="text-primary font-mono text-sm mb-4 block">
+            My work
+          </span>
           <h2 className="section-heading">
             Featured <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            A selection of projects that showcase my skills and passion for building
+            A selection of projects that showcase my skills and passion for
+            building
           </p>
         </motion.div>
 

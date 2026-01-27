@@ -7,12 +7,13 @@ const achievements = [
   {
     icon: Globe,
     title: "Erasmus+ Semester Exchange Program",
-    subtitle: "University of Kragujevac, Serbia",
-    year: "2024",
-    flags: "🇪🇺 🇷🇸",
+    subtitle: "Varna University of Management, Bulgaria",
+    year: "2025",
+    flags: "🌍bg",
     highlights: [
       "Selected as an Erasmus+ Scholar for a semester exchange program",
-      "Studied abroad at University of Kragujevac, Serbia",
+      "Studied abroad at Varna University of Management in Bulgaria",
+      "Completed Machine Learning and Data Structure and Algorithms projects",
       "Gained international academic exposure and cross-cultural experience",
       "Improved communication skills, adaptability, and global collaboration",
       "Represented my home university in academic and cultural activities",
