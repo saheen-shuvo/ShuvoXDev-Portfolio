@@ -12,11 +12,23 @@ import cp from "../assets/projects/cp.webp";
 
 const projects = [
   {
-    title: "LogiXShuvo",
+    title: "SHAHEENS OFFICIAL",
     description:
-      "Modern MERN stack application that streamlines parcel booking, tracking, and management. Role-based access for admins, deliverymen, and customers.",
+      "A live e-commerce website for girls’ fashion. Built collaboratively, where I developed ~75% of the project, including UI, frontend logic, and Node.js CRUD APIs, while my teammate handled server setup and database connection.",
+    image: shaheen,
+    tags: ["Next.js", "MongoDB", "Shadcn", "Tailwind", "Node.js"],
+    links: [
+      { label: "Live Demo", url: "#" },
+      { label: "Repo", url: "#" },
+    ],
+    gradient: "from-rose-500 to-rose-500/50",
+  },
+  {
+    title: "LOGIXSHUVO",
+    description:
+      "A MERN-based parcel delivery platform with role-based dashboards for Admin, Deliveryman, and Customer. I designed and developed the entire project end-to-end, including UI, backend APIs, payment gateway, authentication, and business logic.",
     image: logixshuvoImg,
-    tags: ["React", "Node.js", "MongoDB", "Express"],
+    tags: ["React", "Node.js", "Stripe", "MongoDB", "Express"],
     links: [
       { label: "Live Demo", url: "#" },
       { label: "Client Repo", url: "#" },
@@ -25,11 +37,11 @@ const projects = [
     gradient: "from-primary to-primary/50",
   },
   {
-    title: "Shuvo Bites",
+    title: "SHUVOBITES",
     description:
-      "Restaurant management system featuring orders, reservations, menu management, and staff scheduling with a modern interface.",
+      "A modern food ordering platform that allows users to browse menus, place orders, make payments, and manage carts with a smooth user experience. I developed the project focusing on responsive UI, frontend logic, and core feature integration.",
     image: shuvoBitesImg,
-    tags: ["React", "Node.js", "MongoDB", "Tailwind"],
+    tags: ["React", "Node.js", "MongoDB", "Axios", "Tailwind"],
     links: [
       { label: "Live Demo", url: "#" },
       { label: "Repo", url: "#" },
@@ -37,11 +49,11 @@ const projects = [
     gradient: "from-accent to-accent/50",
   },
   {
-    title: "EdTech",
+    title: "STEM FOR SUPER GIRLS",
     description:
-      "Client project showcasing a youth-led initiative empowering girls through STEM education with modern responsive UI.",
+      "A web platform promoting girls’ participation in STEM through programs, events, and community initiatives. I designed and developed a responsive UI with interactive sections, authentication, and smooth user flows to showcase impact and engagement.",
     image: stem,
-    tags: ["React", "Responsive", "Modern UI"],
+    tags: ["React", "Firebase", "DaisyUI", "Framer Motion", "MongoDB"],
     links: [
       { label: "Live Demo", url: "#" },
       { label: "Repo", url: "#" },
@@ -49,11 +61,11 @@ const projects = [
     gradient: "from-emerald-500 to-emerald-500/50",
   },
   {
-    title: "International Affairs DIU",
+    title: "INTERNATIONAL AFFAIRS DIU",
     description:
-      "Ongoing web project showcasing international programs, partnerships, and exchange opportunities with modern responsive design.",
+      "An ongoing web project for the International Affairs Office of Daffodil International University, focused on presenting international programs, partnerships, and student services. I am working on building a clean, responsive UI and integrating dynamic content to improve accessibility and user experience.",
     image: ia,
-    tags: ["React", "Tailwind", "Responsive"],
+    tags: ["React", "Tailwind", "Responsive", "MongoDB", "Firebase"],
     links: [
       { label: "Live Demo", url: "#" },
       { label: "Repo", url: "#" },
@@ -61,24 +73,14 @@ const projects = [
     gradient: "from-violet-500 to-violet-500/50",
   },
   {
-    title: "Shaheen",
+    title: "PROBLEM SOLVING",
     description:
-      "Language learning platform where users can find tutors, view profiles, book sessions, manage bookings, and add tutorials.",
-    image: shaheen,
-    tags: ["React", "MongoDB", "Firebase Auth"],
-    links: [
-      { label: "Live Demo", url: "#" },
-      { label: "Repo", url: "#" },
-    ],
-    gradient: "from-rose-500 to-rose-500/50",
-  },
-  {
-    title: "Codeforces Problem Solving",
-    description:
-      "Collection of Codeforces solutions demonstrating proficiency in algorithms and data structures for competitive programming.",
+      "Actively practicing competitive programming on platforms such as Codeforces and CodeChef, with a strong focus on data structures, algorithms, and efficient problem-solving techniques. This regular practice has strengthened my logical thinking, optimized coding approach, and improved my ability to solve complex problems.",
     image: cp,
-    tags: ["C++", "Algorithms", "DSA"],
-    links: [{ label: "Repo", url: "#" }],
+    tags: ["C", "C++", "Algorithms", "DSA"],
+    links: [{ label: "Codeforces", url: " https://codeforces.com/profile/saheen_shuvo" },
+    { label: "CodeChef", url: "https://www.codechef.com/users/saheen_shuvo" }
+    ],
     gradient: "from-amber-500 to-amber-500/50",
   },
 ];
@@ -119,10 +121,10 @@ const ProjectCard = ({
 
       {/* Content */}
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+        <h3 className="text-lg font-bold mb-3 group-hover:text-primary transition-colors">
           {project.title}
         </h3>
-        <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+        <p className="text-muted-foreground text-xs mb-4 leading-relaxed text-justify">
           {project.description}
         </p>
 
@@ -131,7 +133,7 @@ const ProjectCard = ({
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium"
+              className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium"
             >
               {tag}
             </span>
@@ -146,7 +148,7 @@ const ProjectCard = ({
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-primary transition-colors"
               whileHover={{ x: 3 }}
               whileTap={{ scale: 0.95 }}
             >
