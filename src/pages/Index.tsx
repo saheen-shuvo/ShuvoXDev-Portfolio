@@ -14,6 +14,7 @@ import Footer from "@/components/Footer";
 import CursorFollower from "@/components/CursorFollower";
 import GlobalBackground from "@/components/GlobalBackground";
 import LoadingScreen from "@/components/LoadingScreen";
+import AskShubot from "@/components/AskShubot";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -54,6 +55,7 @@ const Index = () => {
           <Contact />
           <Footer />
         </div>
+        <AskShubot />
       </div>
     </>
   );
