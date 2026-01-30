@@ -6,9 +6,9 @@ const galleryImages = [
   {
     id: 1,
     placeholder: "University Campus",
-    location: "Kragujevac, Serbia",
+    location: "Varna University of Management",
     date: "Spring 2024",
-    description: "Exploring the beautiful campus grounds",
+    description: "Exploring the beautiful campus",
   },
   {
     id: 2,
@@ -267,7 +267,7 @@ const ExchangeGallery = () => {
               className="absolute -right-4 top-1/3 glass-card px-4 py-3 hidden lg:block"
             >
               <div className="text-2xl font-bold gradient-text-accent">🇷🇸</div>
-              <div className="text-xs text-muted-foreground">Serbia</div>
+              <div className="text-xs text-muted-foreground">Bulgaria</div>
             </motion.div>
 
             <motion.div

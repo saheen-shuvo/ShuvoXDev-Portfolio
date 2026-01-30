@@ -70,7 +70,20 @@ const Navbar = () => {
           <span className="flex items-center">
             {"<"}
             <span className="gradient-text">Shuvo</span>
-            <span className="gradient-text-accent">X</span>
+            <motion.span
+              className="gradient-text-accent inline-block"
+              animate={{
+                rotate: [0, 5, -5, 0],
+                scale: [1, 1.1, 1],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              X
+            </motion.span>
             <span className="gradient-text">Dev</span>
             {" />"}
           </span>

@@ -39,7 +39,7 @@ const Index = () => {
         <LoadingScreen isLoading={isLoading} />
       </AnimatePresence>
       
-      <div className="min-h-screen bg-background overflow-x-hidden relative">
+      <div className="min-h-screen bg-background overflow-x-hidden relative ">
         <GlobalBackground />
         <CursorFollower />
         <div className="relative z-10">

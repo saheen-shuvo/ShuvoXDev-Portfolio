@@ -55,17 +55,18 @@ export async function askGemini(message: string) {
         contents: [
           {
             role: "user",
+            parts: [{ text: SYSTEM_CONTEXT }],
+          },
+          {
+            role: "user",
             parts: [
               {
-                text:
-                  `${SYSTEM_CONTEXT}\n\n` +
-                  `User question: ${message}\n\n` +
-                  `Answer as Shubot:`,
+                text: `${SYSTEM_CONTEXT}\n\nUser message: ${message}`,
               },
             ],
           },
         ],
-        generationConfig: { temperature: 0.4, maxOutputTokens: 400 },
+        generationConfig: { temperature: 0.3, maxOutputTokens: 400 },
       }),
     },
   );
@@ -81,5 +82,5 @@ export async function askGemini(message: string) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const text = parts.map((p: any) => p.text || "").join("");
 
-  return text || "No reply";
+  return text || "I don’t have that information in my portfolio yet.";
 }

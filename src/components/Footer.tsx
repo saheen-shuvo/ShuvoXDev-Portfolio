@@ -12,7 +12,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             className="text-muted-foreground text-sm flex items-center gap-2"
           >
-            Developed with <Heart size={14} className="text-accent fill-accent" /> by{" "}
+            Developed by{" "}
             <a
               href="#home"
               target="_blank"

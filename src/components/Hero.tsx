@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import RippleButton from "./RippleButton";
-import profilePic from "../assets/hero/formal image.jpeg";
+import profilePic from "../assets/hero/heroBanner.webp";
 
 const Hero = () => {
   const handleScrollToProjects = () => {
@@ -31,7 +31,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 "
     >
       {/* Floating Gradient Blobs */}
       <div

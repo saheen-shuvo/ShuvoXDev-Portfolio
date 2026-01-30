@@ -6,7 +6,7 @@ import { Code2, Rocket, Bug, MessageSquare } from "lucide-react";
 const aboutItems = [
   {
     icon: Bug,
-    text: '✨ Creating bugs since I wrote my first "Hello, World!" and forgot the semicolon.',
+    text: 'Creating bugs since I wrote my first "Hello, World!" and forgot the semicolon.',
   },
   {
     icon: Code2,
@@ -18,7 +18,7 @@ const aboutItems = [
   },
   {
     icon: MessageSquare,
-    text: "Fun fact is, I talk to my code—sometimes it listens, sometimes it just throws errors. XD",
+    text: "Fun fact is, I talk to my code, sometimes it listens, sometimes it just throws errors. XD",
   },
 ];
 
