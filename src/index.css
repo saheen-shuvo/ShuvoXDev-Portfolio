@@ -124,6 +124,41 @@
   }
 }
 
+/* Marquee Animation */
+  @keyframes marquee-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes marquee-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  .animate-marquee-left {
+    animation: marquee-left 30s linear infinite;
+  }
+
+  .animate-marquee-right {
+    animation: marquee-right 30s linear infinite;
+  }
+
+  /* Parallax Background */
+  .parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
 @layer components {
   .glass-card {
     @apply rounded-2xl border;
