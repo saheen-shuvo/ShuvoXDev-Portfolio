@@ -155,14 +155,13 @@ const ExchangeGallery = () => {
           >
             <Plane className="w-4 h-4 text-primary" />
             <span className="text-primary font-mono text-sm">Erasmus+ Journey</span>
-            <Sparkles className="w-4 h-4 text-accent" />
           </motion.div>
 
           <h2 className="section-heading">
             <span className="gradient-text">Exchange</span> Memories
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Capturing moments from my semester abroad in Serbia 🇷🇸
+            Capturing moments from my semester abroad in Bulgaria 
           </p>
         </motion.div>
 
@@ -256,7 +255,7 @@ const ExchangeGallery = () => {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="absolute -left-4 top-1/4 glass-card px-4 py-3 hidden lg:block"
             >
-              <div className="text-2xl font-bold gradient-text">6+</div>
+              <div className="text-2xl font-bold gradient-text">4+</div>
               <div className="text-xs text-muted-foreground">Months Abroad</div>
             </motion.div>
 
@@ -264,9 +263,9 @@ const ExchangeGallery = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="absolute -right-4 top-1/3 glass-card px-4 py-3 hidden lg:block"
+              className="absolute -right-4 top-[20%] glass-card px-4 py-3 hidden lg:block "
             >
-              <div className="text-2xl font-bold gradient-text-accent">🇷🇸</div>
+              <div className="text-2xl font-bold gradient-text-accent flex justify-center"><img className="w-8" src="https://img.icons8.com/?size=100&id=D8d97JyA7dc6&format=png&color=000000" alt="" /></div>
               <div className="text-xs text-muted-foreground">Bulgaria</div>
             </motion.div>
 
@@ -348,7 +347,7 @@ const ExchangeGallery = () => {
           className="text-center mt-12"
         >
           <p className="text-muted-foreground mb-4">
-            ✨ More memories coming soon...
+            More memories coming soon...
           </p>
           <div className="inline-flex items-center gap-2 text-sm text-primary/70 font-mono">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
