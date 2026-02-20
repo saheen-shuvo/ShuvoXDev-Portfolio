@@ -15,7 +15,7 @@ import CursorFollower from "@/components/CursorFollower";
 import GlobalBackground from "@/components/GlobalBackground";
 import LoadingScreen from "@/components/LoadingScreen";
 import AskShubot from "@/components/AskShubot";
-import ParallaxShowcase from "@/components/ParallaxShowcase";
+// import ParallaxShowcase from "@/components/ParallaxShowcase";
 
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -49,7 +49,7 @@ const Index = () => {
           <About />
           <Skills />
           <Projects />
-          <ParallaxShowcase />
+          {/* <ParallaxShowcase /> */}
           <Stats />
           <Achievements />
           <ExchangeGallery />
