@@ -75,12 +75,12 @@ const ParallaxShowcase = () => {
       </motion.div>
 
       {/* Center Text - with gap and scroll opacity */}
-      <div className="relative z-20 py-12 lg:py-16">
+      <div className="relative z-20 py-8 lg:py-12">
         <motion.div style={{ opacity: textOpacity }} className="text-center">
-          <h2 className="text-5xl md:text-8xl font-display font-bold text-foreground">
+          <h2 className="text-5xl md:text-6xl font-display font-bold text-foreground">
             Functional
           </h2>
-          <h2 className="text-5xl md:text-8xl font-display font-bold">
+          <h2 className="text-5xl md:text-6xl font-display font-bold">
             <span className="gradient-text">Components</span>
           </h2>
         </motion.div>

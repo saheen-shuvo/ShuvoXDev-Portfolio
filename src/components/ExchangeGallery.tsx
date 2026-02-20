@@ -1,49 +1,72 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Camera, MapPin, Calendar, ChevronLeft, ChevronRight, Sparkles, Plane } from "lucide-react";
+import {
+  MapPin,
+  Calendar,
+  ChevronLeft,
+  ChevronRight,
+  Sparkles,
+  Plane,
+} from "lucide-react";
+
+import img1 from "@/assets/gallery/gallery1.jpg";
+import img2 from "@/assets/gallery/gallery2.jpeg";
+import img3 from "@/assets/gallery/gallery3.jpeg";
+import img4 from "@/assets/gallery/gallery4.jpeg";
+import img5 from "@/assets/gallery/gallery5.jpeg";
+import img6 from "@/assets/gallery/gallery6.jpeg";
 
 const galleryImages = [
   {
     id: 1,
-    placeholder: "University Campus",
-    location: "Varna University of Management",
-    date: "Spring 2024",
-    description: "Exploring the beautiful campus",
+    title: "Erasmus+ Get Together",
+    image: img1,
+    location: "Varna University Campus, Bulgaria",
+    date: "18 October 2025",
+    description:
+      "Exchange students get together for a fun evening of games and food",
   },
   {
     id: 2,
-    placeholder: "City Center",
-    location: "Belgrade, Serbia",
-    date: "Spring 2024",
-    description: "Weekend trip to the capital city",
+    title: "University Campus",
+    image: img2,
+    location: "Varna, Bulgaria",
+    date: "12 September 2025",
+    description: "Exploring the beautiful campus!",
   },
   {
     id: 3,
-    placeholder: "Cultural Event",
-    location: "Serbia",
-    date: "Spring 2024",
-    description: "Participating in local cultural activities",
+    title: "Christmas Lunch",
+    image: img3,
+    location: "Bulgaria",
+    date: "1 December 2025",
+    description:
+      "Participated in a festive Christmas lunch with international students",
   },
   {
     id: 4,
-    placeholder: "Study Group",
-    location: "University Library",
-    date: "Spring 2024",
-    description: "Collaborative learning with international students",
+    title: "Traveling to Vatican City",
+    image: img4,
+    location: "Vatican City",
+    date: "18 November 2025",
+    description: "Visited the Vatican City during a weekend trip to Italy",
   },
   {
     id: 5,
-    placeholder: "Travel Adventure",
-    location: "Eastern Europe",
-    date: "Spring 2024",
-    description: "Exploring new places and cultures",
+    title: "Paris Adventures",
+    image: img5,
+    location: "Paris, France",
+    date: "15 December 2025",
+    description: "Weekend trip to Paris with friends from the exchange program",
   },
   {
     id: 6,
-    placeholder: "Graduation Moment",
-    location: "Kragujevac, Serbia",
-    date: "Spring 2024",
-    description: "Celebrating semester completion",
+    title: "Italy Trip",
+    image: img6,
+    location: "Rome, Italy",
+    date: "20 December 2025",
+    description:
+      "Exploring Rome and its rich history during a trip with exchange friends",
   },
 ];
 
@@ -58,7 +81,9 @@ const ExchangeGallery = () => {
   };
 
   const prevSlide = () => {
-    setActiveIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+    setActiveIndex(
+      (prev) => (prev - 1 + galleryImages.length) % galleryImages.length,
+    );
   };
 
   return (
@@ -69,7 +94,8 @@ const ExchangeGallery = () => {
         <motion.div
           className="absolute w-96 h-96 rounded-full"
           style={{
-            background: "radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, transparent 70%)",
+            background:
+              "radial-gradient(circle, hsl(var(--primary) / 0.15) 0%, transparent 70%)",
             top: "10%",
             left: "-10%",
           }}
@@ -83,7 +109,8 @@ const ExchangeGallery = () => {
         <motion.div
           className="absolute w-80 h-80 rounded-full"
           style={{
-            background: "radial-gradient(circle, hsl(var(--accent) / 0.1) 0%, transparent 70%)",
+            background:
+              "radial-gradient(circle, hsl(var(--accent) / 0.1) 0%, transparent 70%)",
             bottom: "10%",
             right: "-5%",
           }}
@@ -154,14 +181,16 @@ const ExchangeGallery = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6"
           >
             <Plane className="w-4 h-4 text-primary" />
-            <span className="text-primary font-mono text-sm">Erasmus+ Journey</span>
+            <span className="text-primary font-mono text-sm">
+              Erasmus+ Journey
+            </span>
           </motion.div>
 
           <h2 className="section-heading">
             <span className="gradient-text">Exchange</span> Memories
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Capturing moments from my semester abroad in Bulgaria 
+            Capturing moments from my semester abroad in Bulgaria
           </p>
         </motion.div>
 
@@ -176,26 +205,26 @@ const ExchangeGallery = () => {
             {/* Main Display */}
             <div className="relative aspect-video rounded-3xl overflow-hidden glass-card p-1">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 rounded-3xl" />
-              
+
               <motion.div
                 key={activeIndex}
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5 }}
-                className="relative w-full h-full rounded-2xl overflow-hidden bg-gradient-to-br from-secondary to-muted flex items-center justify-center"
+                className="relative w-full h-full rounded-2xl overflow-hidden"
               >
-                {/* Placeholder Content */}
-                <div className="text-center p-8">
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="w-24 h-24 mx-auto mb-6 rounded-full border-2 border-dashed border-primary/50 flex items-center justify-center"
-                  >
-                    <Camera className="w-10 h-10 text-primary/70" />
-                  </motion.div>
-                  <h3 className="text-2xl font-bold mb-2">{galleryImages[activeIndex].placeholder}</h3>
-                  <div className="flex items-center justify-center gap-4 text-muted-foreground text-sm">
+                <img
+                  src={galleryImages[activeIndex].image}
+                  alt={galleryImages[activeIndex].title}
+                  className="w-full h-full object-cover"
+                />
+                {/* Overlay with info */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+                  <h3 className="text-2xl font-bold mb-2 text-white">
+                    {galleryImages[activeIndex].title}
+                  </h3>
+                  <div className="flex items-center gap-4 text-white/80 text-sm">
                     <span className="flex items-center gap-1">
                       <MapPin className="w-4 h-4" />
                       {galleryImages[activeIndex].location}
@@ -205,9 +234,8 @@ const ExchangeGallery = () => {
                       {galleryImages[activeIndex].date}
                     </span>
                   </div>
-                  <p className="mt-4 text-foreground/70">{galleryImages[activeIndex].description}</p>
-                  <p className="mt-6 text-xs text-muted-foreground/50 font-mono">
-                    [ Upload your photo here ]
+                  <p className="mt-2 text-white/70">
+                    {galleryImages[activeIndex].description}
                   </p>
                 </div>
 
@@ -265,7 +293,13 @@ const ExchangeGallery = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="absolute -right-4 top-[20%] glass-card px-4 py-3 hidden lg:block "
             >
-              <div className="text-2xl font-bold gradient-text-accent flex justify-center"><img className="w-8" src="https://img.icons8.com/?size=100&id=D8d97JyA7dc6&format=png&color=000000" alt="" /></div>
+              <div className="text-2xl font-bold gradient-text-accent flex justify-center">
+                <img
+                  className="w-8"
+                  src="https://img.icons8.com/?size=100&id=D8d97JyA7dc6&format=png&color=000000"
+                  alt=""
+                />
+              </div>
               <div className="text-xs text-muted-foreground">Bulgaria</div>
             </motion.div>
 
@@ -294,11 +328,17 @@ const ExchangeGallery = () => {
               onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
               className={`relative aspect-square rounded-2xl overflow-hidden cursor-pointer group ${
-                activeIndex === index ? "ring-2 ring-primary ring-offset-2 ring-offset-background" : ""
+                activeIndex === index
+                  ? "ring-2 ring-primary ring-offset-2 ring-offset-background"
+                  : ""
               }`}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary to-muted" />
-              
+              <img
+                src={image.image}
+                alt={image.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+
               {/* Hover Overlay */}
               <motion.div
                 initial={{ opacity: 0 }}
@@ -306,19 +346,9 @@ const ExchangeGallery = () => {
                 className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end justify-center p-3"
               >
                 <span className="text-xs font-medium text-white text-center line-clamp-2">
-                  {image.placeholder}
+                  {image.title}
                 </span>
               </motion.div>
-
-              {/* Camera Icon Placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.div
-                  animate={hoveredCard === index ? { scale: 1.2, rotate: 15 } : { scale: 1, rotate: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Camera className="w-8 h-8 text-muted-foreground/50" />
-                </motion.div>
-              </div>
 
               {/* Active Indicator */}
               {activeIndex === index && (

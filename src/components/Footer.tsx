@@ -14,7 +14,7 @@ const Footer = () => {
           >
             Developed by{" "}
             <a
-              href="#home"
+              href="https://github.com/saheen-shuvo"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:text-accent transition-colors font-medium"
@@ -23,15 +23,14 @@ const Footer = () => {
             </a>
           </motion.p>
 
-          <motion.a
-            href="mailto:saheenshuvo182@gmail.com"
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-muted-foreground hover:text-primary transition-colors text-sm"
           >
-            saheenshuvo182@gmail.com
-          </motion.a>
+            Last Updated: 20 February 2026
+          </motion.p>
         </div>
 
         <motion.p
