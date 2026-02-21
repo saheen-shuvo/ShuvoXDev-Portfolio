@@ -1,9 +1,10 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import RippleButton from "./RippleButton";
 import profilePic from "../assets/hero/heroBanner.webp";
 
 const Hero = () => {
+  const reduceMotion = useReducedMotion();
   const handleScrollToProjects = () => {
     const element = document.querySelector("#projects");
     if (element) {
@@ -33,25 +34,6 @@ const Hero = () => {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 "
     >
-      {/* Floating Gradient Blobs */}
-      <div
-        className="floating-blob w-96 h-96 bg-primary/30 top-20 -left-48"
-        style={{
-          animationDelay: "0s",
-        }}
-      />
-      <div
-        className="floating-blob w-80 h-80 bg-accent/20 bottom-20 -right-40"
-        style={{
-          animationDelay: "-5s",
-        }}
-      />
-      <div
-        className="floating-blob w-64 h-64 bg-primary/20 top-1/2 left-1/3"
-        style={{
-          animationDelay: "-10s",
-        }}
-      />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col-reverse pt-8 lg:pt-0 lg:flex-row items-center justify-between gap-12 lg:gap-16">
@@ -254,20 +236,22 @@ const Hero = () => {
                 <img
                   src={profilePic}
                   alt="Saheen Alam Shuvo - Full Stack Developer"
+                  width={384}
+                  height={384}
+                  decoding="async"
+                  loading="eager"
                   className="w-full h-full object-cover"
                 />
               </div>
 
               {/* Decorative Ring */}
               <motion.div
-                animate={{
-                  rotate: 360,
-                }}
-                transition={{
-                  duration: 20,
-                  repeat: Infinity,
-                  ease: "linear",
-                }}
+                animate={reduceMotion ? {} : { rotate: 360 }}
+                transition={
+                  reduceMotion
+                    ? {}
+                    : { duration: 20, repeat: Infinity, ease: "linear" }
+                }
                 className="absolute -inset-4 border-2 border-dashed border-primary/20 rounded-full"
               />
             </div>
@@ -288,14 +272,8 @@ const Hero = () => {
           className="absolute bottom-10 left-1/2 -translate-x-1/2"
         >
           <motion.div
-            animate={{
-              y: [0, 10, 0],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-            }}
-            className="text-muted-foreground"
+            animate={reduceMotion ? {} : { y: [0, 10, 0] }}
+            transition={reduceMotion ? {} : { duration: 2, repeat: Infinity }}
           >
             <ArrowDown size={24} />
           </motion.div>

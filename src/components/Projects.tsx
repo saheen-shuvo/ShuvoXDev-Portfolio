@@ -78,7 +78,7 @@ const projects = [
       "Actively practicing competitive programming on platforms such as Codeforces and CodeChef, with a strong focus on data structures, algorithms, and efficient problem-solving techniques. This regular practice has strengthened my logical thinking, optimized coding approach, and improved my ability to solve complex problems.",
     image: cp,
     tags: ["C", "C++", "Algorithms", "DSA"],
-    links: [{ label: "Codeforces", url: " https://codeforces.com/profile/saheen_shuvo" },
+    links: [{ label: "Codeforces", url: "https://codeforces.com/profile/saheen_shuvo" },
     { label: "CodeChef", url: "https://www.codechef.com/users/saheen_shuvo" }
     ],
     gradient: "from-amber-500 to-amber-500/50",

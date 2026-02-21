@@ -108,7 +108,8 @@ const Navbar = () => {
           ))}
           <ThemeToggle />
           <motion.a
-            href="#"
+            href="/Resume_Saheen_Alam_Shuvo.pdf"
+            download="Resume_Saheen_Alam_Shuvo.pdf"
             className="btn-primary flex items-center gap-2 text-sm"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -152,7 +153,8 @@ const Navbar = () => {
           <div className="flex items-center gap-4 mt-2">
             <ThemeToggle />
             <a
-              href="#"
+              href="/Resume_Saheen_Alam_Shuvo.pdf"
+              download="Resume_Saheen_Alam_Shuvo.pdf"
               className="btn-primary flex items-center justify-center gap-2 flex-1"
             >
               <Download size={16} />

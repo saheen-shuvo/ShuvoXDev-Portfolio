@@ -6,8 +6,8 @@ import { Mail, Github, Linkedin, Facebook, Send, ArrowRight } from "lucide-react
 const socialLinks = [
   { icon: Mail, label: "Email", href: "mailto:saheenshuvo182@gmail.com", value: "saheenshuvo182@gmail.com" },
   { icon: Github, label: "GitHub", href: "https://github.com/saheen-shuvo", value: "github.com/saheen-shuvo" },
-  { icon: Linkedin, label: "LinkedIn", href: "#", value: "linkedin.com/in/shuvo" },
-  { icon: Facebook, label: "Facebook", href: "#", value: "facebook.com/shuvo" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/saheen-alam-shuvo-182-li/", value: "linkedin.com/in/saheenalamshuvo" },
+  { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/share/16KUdWWeCm/?mibextid=wwXIfr", value: "facebook.com/saheenalamshuvo" },
 ];
 
 const Contact = () => {

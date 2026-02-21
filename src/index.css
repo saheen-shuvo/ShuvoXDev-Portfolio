@@ -293,3 +293,42 @@
     @apply relative overflow-hidden;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  /* Smooth scrolling is motion */
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Stop infinite/decorative animations */
+  .floating-blob,
+  .animate-marquee-left,
+  .animate-marquee-right,
+  .animate-ripple {
+    animation: none !important;
+  }
+
+  /* Avoid parallax "fixed" behavior */
+  .parallax-bg {
+    background-attachment: scroll !important;
+  }
+
+  /* Optional: reduce overall motion */
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Mobile performance: background-attachment: fixed is expensive */
+@media (max-width: 768px) {
+  .parallax-bg {
+    background-attachment: scroll;
+  }
+}
+@media (max-width: 767px) {
+  .floating-blob {
+    display: none !important;
+  }
+}
