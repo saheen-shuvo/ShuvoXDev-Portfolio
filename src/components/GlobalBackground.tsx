@@ -55,7 +55,7 @@ const GlobalBackground = () => {
       </div>
 
       {/* Floating Particles */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         {[...Array(30)].map((_, i) => (
           <motion.div
             key={i}
@@ -80,7 +80,7 @@ const GlobalBackground = () => {
             }}
           />
         ))}
-      </div>
+      </div> */}
 
       {/* Subtle Grid Overlay */}
       <div 
@@ -124,11 +124,11 @@ const GlobalBackground = () => {
       />
 
       {/* Horizontal Scan Lines */}
-      <motion.div
+      {/* <motion.div
         className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"
         animate={{ top: ["-5%", "105%"] }}
         transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-      />
+      /> */}
 
       {/* Corner Accents */}
       <div className="absolute top-0 left-0 w-64 h-64 opacity-30">
