@@ -18,8 +18,8 @@ const projects = [
     image: shaheen,
     tags: ["Next.js", "MongoDB", "Shadcn", "Tailwind", "Node.js"],
     links: [
-      { label: "Live Demo", url: "#" },
-      { label: "Repo", url: "#" },
+      { label: "Live Demo", url: "https://shaheensofficial.com/" },
+      { label: "Repo", url: "https://github.com/saheen-shuvo/nureh-ecommerce-project" },
     ],
     gradient: "from-rose-500 to-rose-500/50",
   },
@@ -30,9 +30,9 @@ const projects = [
     image: logixshuvoImg,
     tags: ["React", "Node.js", "Stripe", "MongoDB", "Express"],
     links: [
-      { label: "Live Demo", url: "#" },
-      { label: "Client Repo", url: "#" },
-      { label: "Server Repo", url: "#" },
+      { label: "Live Demo", url: "https://logixshuvo.web.app/" },
+      { label: "Client Repo", url: "https://github.com/saheen-shuvo/logixshuvo-client" },
+      { label: "Server Repo", url: "https://github.com/saheen-shuvo/logixshuvo-server" },
     ],
     gradient: "from-primary to-primary/50",
   },
