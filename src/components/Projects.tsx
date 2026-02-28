@@ -43,8 +43,8 @@ const projects = [
     image: shuvoBitesImg,
     tags: ["React", "Node.js", "MongoDB", "Axios", "Tailwind"],
     links: [
-      { label: "Live Demo", url: "#" },
-      { label: "Repo", url: "#" },
+      { label: "Live Demo", url: "https://shuvo-bites.web.app/" },
+      { label: "Repo", url: "https://github.com/saheen-shuvo/shuvo-bites-client" },
     ],
     gradient: "from-accent to-accent/50",
   },
@@ -55,8 +55,8 @@ const projects = [
     image: stem,
     tags: ["React", "Firebase", "DaisyUI", "Framer Motion", "MongoDB"],
     links: [
-      { label: "Live Demo", url: "#" },
-      { label: "Repo", url: "#" },
+      { label: "Live Demo", url: "https://stem-for-super-girls-ad869.web.app/" },
+      { label: "Repo", url: "https://github.com/saheen-shuvo/edTech-client" },
     ],
     gradient: "from-emerald-500 to-emerald-500/50",
   },
@@ -67,8 +67,8 @@ const projects = [
     image: ia,
     tags: ["React", "Tailwind", "Responsive", "MongoDB", "Firebase"],
     links: [
-      { label: "Live Demo", url: "#" },
-      { label: "Repo", url: "#" },
+      { label: "Live Demo", url: "https://international-affairs-6273c.firebaseapp.com/" },
+      { label: "Repo", url: "https://github.com/saheen-shuvo/international-affairs-client" },
     ],
     gradient: "from-violet-500 to-violet-500/50",
   },
