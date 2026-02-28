@@ -39,6 +39,7 @@
     /* Custom Design Tokens */
     --glass-bg: 222 47% 10% / 0.6;
     --glass-border: 222 47% 25% / 0.3;
+
     --gradient-primary: linear-gradient(
       135deg,
       hsl(200, 98%, 36%),
@@ -55,6 +56,8 @@
       hsl(222, 47%, 10%) 50%,
       hsl(230, 47%, 8%) 100%
     );
+
+    /* Desktop shadows (nice), will be reduced on mobile below */
     --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.3);
     --shadow-glow-primary: 0 0 40px hsl(200 98% 36% / 0.3);
     --shadow-glow-accent: 0 0 40px hsl(25 100% 50% / 0.3);
@@ -125,39 +128,24 @@
 }
 
 /* Marquee Animation */
-  @keyframes marquee-left {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
+@keyframes marquee-left {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+.animate-marquee-left { animation: marquee-left 30s linear infinite; }
+.animate-marquee-right { animation: marquee-right 30s linear infinite; }
 
-  @keyframes marquee-right {
-    0% {
-      transform: translateX(-50%);
-    }
-    100% {
-      transform: translateX(0%);
-    }
-  }
-
-  .animate-marquee-left {
-    animation: marquee-left 30s linear infinite;
-  }
-
-  .animate-marquee-right {
-    animation: marquee-right 30s linear infinite;
-  }
-
-  /* Parallax Background */
-  .parallax-bg {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+/* Parallax Background */
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 @layer components {
   .glass-card {
@@ -165,16 +153,16 @@
     background: hsl(var(--glass-bg));
     border-color: hsl(var(--glass-border));
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     box-shadow: var(--shadow-glass);
   }
 
   .glass-nav {
-    background: hsl(0 0% 100% / 0.92); 
+    background: hsl(0 0% 100% / 0.92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
   }
 
-  /* Dark mode */
   .dark .glass-nav {
     background: hsl(222 47% 8% / 0.7);
   }
@@ -198,7 +186,6 @@
     background: var(--gradient-primary);
     box-shadow: var(--shadow-glow-primary);
   }
-
   .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 0 60px hsl(200 98% 36% / 0.4);
@@ -209,7 +196,6 @@
     background: var(--gradient-accent);
     box-shadow: var(--shadow-glow-accent);
   }
-
   .btn-accent:hover {
     transform: translateY(-2px);
     box-shadow: 0 0 60px hsl(25 100% 50% / 0.4);
@@ -220,7 +206,6 @@
     border-color: hsl(var(--primary));
     color: hsl(var(--primary));
   }
-
   .btn-outline:hover {
     background: hsl(var(--primary) / 0.1);
     transform: translateY(-2px);
@@ -231,8 +216,8 @@
     background: hsl(var(--glass-bg));
     border: 1px solid hsl(var(--glass-border));
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
-
   .tech-badge:hover {
     border-color: hsl(var(--primary));
     box-shadow: var(--shadow-glow-primary);
@@ -249,58 +234,31 @@
     filter: blur(80px);
     opacity: 0.4;
     animation: float 20s ease-in-out infinite;
+    will-change: transform;
   }
 
   @keyframes float {
-    0%,
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-    25% {
-      transform: translate(50px, -50px) scale(1.1);
-    }
-    50% {
-      transform: translate(-30px, 30px) scale(0.9);
-    }
-    75% {
-      transform: translate(30px, 50px) scale(1.05);
-    }
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(50px, -50px) scale(1.1); }
+    50% { transform: translate(-30px, 30px) scale(0.9); }
+    75% { transform: translate(30px, 50px) scale(1.05); }
   }
 
   @keyframes ripple {
-    0% {
-      width: 0;
-      height: 0;
-      opacity: 0.5;
-    }
-    100% {
-      width: 300px;
-      height: 300px;
-      opacity: 0;
-    }
+    0% { width: 0; height: 0; opacity: 0.5; }
+    100% { width: 300px; height: 300px; opacity: 0; }
   }
+  .animate-ripple { animation: ripple 0.6s ease-out forwards; }
 
-  .animate-ripple {
-    animation: ripple 0.6s ease-out forwards;
-  }
+  .code-font { font-family: "JetBrains Mono", monospace; }
 
-  .code-font {
-    font-family: "JetBrains Mono", monospace;
-  }
-
-  /* Ripple button base styles */
-  .btn-ripple {
-    @apply relative overflow-hidden;
-  }
+  .btn-ripple { @apply relative overflow-hidden; }
 }
 
+/* Respect user motion settings */
 @media (prefers-reduced-motion: reduce) {
-  /* Smooth scrolling is motion */
-  html {
-    scroll-behavior: auto;
-  }
+  html { scroll-behavior: auto; }
 
-  /* Stop infinite/decorative animations */
   .floating-blob,
   .animate-marquee-left,
   .animate-marquee-right,
@@ -308,12 +266,8 @@
     animation: none !important;
   }
 
-  /* Avoid parallax "fixed" behavior */
-  .parallax-bg {
-    background-attachment: scroll !important;
-  }
+  .parallax-bg { background-attachment: scroll !important; }
 
-  /* Optional: reduce overall motion */
   * {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
@@ -321,14 +275,41 @@
   }
 }
 
-/* Mobile performance: background-attachment: fixed is expensive */
 @media (max-width: 768px) {
-  .parallax-bg {
-    background-attachment: scroll;
+  /* Parallax fixed is expensive on mobile */
+  .parallax-bg { background-attachment: scroll; }
+
+  /* Turn off GPU-expensive backdrop blur on mobile */
+  .glass-card,
+  .glass-nav,
+  .tech-badge {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    /* keep "glass" feel without blur */
+    background: hsl(222 47% 12% / 0.92);
+  }
+  .light .glass-card,
+  .light .glass-nav,
+  .light .tech-badge {
+    background: hsl(0 0% 100% / 0.96);
+  }
+
+  /* Reduce expensive glow shadows */
+  .btn-primary,
+  .btn-accent,
+  .tech-badge:hover {
+    box-shadow: none !important;
+  }
+
+  /* Disable infinite marquee animations on mobile */
+  .animate-marquee-left,
+  .animate-marquee-right {
+    animation: none !important;
+    transform: none !important;
   }
 }
+
+/* Mobile: remove the big blur blobs completely */
 @media (max-width: 767px) {
-  .floating-blob {
-    display: none !important;
-  }
+  .floating-blob { display: none !important; }
 }
