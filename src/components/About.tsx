@@ -26,7 +26,7 @@ const About = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-24 relative">
+    <section id="about" className="py-20 relative">
       <div
         className="floating-blob w-72 h-72 bg-accent/15 top-0 right-0"
         style={{ animationDelay: "-3s" }}
@@ -35,9 +35,9 @@ const About = () => {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-center mb-16"
         >
           <span className="text-primary font-mono text-sm mb-4 block">
@@ -55,11 +55,10 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {aboutItems.map((item, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              transition={{ duration: 0.3 }}
+              key={index}
               className="glass-card p-6 flex items-start gap-4 group"
             >
               <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
