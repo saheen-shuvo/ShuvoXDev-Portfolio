@@ -1,11 +1,20 @@
+"use client";
+
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile"; // adjust path if needed
 
 interface LoadingScreenProps {
   isLoading: boolean;
 }
 
 const LoadingScreen = ({ isLoading }: LoadingScreenProps) => {
+  const isMobile = useIsMobile();
+
   if (!isLoading) return null;
+
+  if (isMobile) {
+    return null;
+  }
 
   return (
     <motion.div
@@ -15,7 +24,6 @@ const LoadingScreen = ({ isLoading }: LoadingScreenProps) => {
       transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       <div className="relative flex items-center justify-center">
-        {/* Ripple animations behind the name */}
         {[...Array(4)].map((_, i) => (
           <motion.div
             key={i}
@@ -39,7 +47,6 @@ const LoadingScreen = ({ isLoading }: LoadingScreenProps) => {
           />
         ))}
 
-        {/* Glowing background pulse */}
         <motion.div
           className="absolute rounded-full"
           style={{
@@ -60,7 +67,6 @@ const LoadingScreen = ({ isLoading }: LoadingScreenProps) => {
           }}
         />
 
-        {/* Name text */}
         <motion.h1
           className="relative z-10 text-xl md:text-3xl font-bold tracking-wider"
           style={{
@@ -88,7 +94,6 @@ const LoadingScreen = ({ isLoading }: LoadingScreenProps) => {
           <span className="gradient-text">Dev</span>
         </motion.h1>
 
-        {/* Loading dots */}
         <div className="absolute -bottom-12 flex gap-2">
           {[...Array(3)].map((_, i) => (
             <motion.div

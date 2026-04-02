@@ -39,75 +39,28 @@ const Hero = () => {
         <div className="flex flex-col-reverse pt-8 lg:pt-0 lg:flex-row items-center justify-between gap-12 lg:gap-16">
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left max-w-2xl">
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-              }}
+            <div
               className="mb-6"
             >
               <span className="text-primary font-mono text-sm md:text-base">
                 Hello, I'm
               </span>
-            </motion.div>
+            </div>
 
-            <motion.h1
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.1,
-              }}
+            <h1
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
             >
               <span className="gradient-text">Saheen Alam</span>{" "}
               <span className="text-foreground">Shuvo</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.2,
-              }}
+            <p
               className="text-lg md:text-xl text-accent font-medium mb-6 font-mono"
             >
               Full Stack Developer | Competitive Programmer
-            </motion.p>
+            </p>
 
-            <motion.p
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.3,
-              }}
+            <p
               className="text-muted-foreground text-base md:text-lg mb-10 leading-relaxed"
             >
               I’m a Full Stack web developer specializing in the MERN stack,
@@ -115,21 +68,9 @@ const Hero = () => {
               programming. I build scalable, user-friendly web applications and
               enjoy transforming complex ideas into clean, elegant digital
               solutions.
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.4,
-              }}
+            <div
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10"
             >
               <RippleButton
@@ -146,21 +87,9 @@ const Hero = () => {
               >
                 Contact Me
               </RippleButton>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.6,
-                delay: 0.5,
-              }}
+            <div
               className="flex items-center justify-center lg:justify-start gap-6"
             >
               <motion.a
@@ -206,25 +135,11 @@ const Hero = () => {
               >
                 <Mail size={24} />
               </motion.a>
-            </motion.div>
+            </div>
           </div>
 
           {/* Profile Photo */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              scale: 0.8,
-              x: 50,
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 0.8,
-              delay: 0.2,
-            }}
+          <div
             className="flex-shrink-0"
           >
             <div className="relative">
@@ -245,17 +160,11 @@ const Hero = () => {
               </div>
 
               {/* Decorative Ring */}
-              <motion.div
-                animate={reduceMotion ? {} : { rotate: 360 }}
-                transition={
-                  reduceMotion
-                    ? {}
-                    : { duration: 20, repeat: Infinity, ease: "linear" }
-                }
-                className="absolute -inset-4 border-2 border-dashed border-primary/20 rounded-full"
+              <div
+                className="absolute -inset-4 border-3 border-dashed border-primary/20 rounded-full"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
 
         <motion.div
