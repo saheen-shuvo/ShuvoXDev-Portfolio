@@ -29,18 +29,14 @@ const highlights = [
 
 const Highlights = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section id="highlights" className="py-24 relative">
       <div className="floating-blob w-72 h-72 bg-primary/15 bottom-0 left-1/4" style={{ animationDelay: "-8s" }} />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <motion.div
+        <div
           ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <span className="text-primary font-mono text-sm mb-4 block">Experience</span>
@@ -50,16 +46,12 @@ const Highlights = () => {
           <p className="text-muted-foreground max-w-xl mx-auto">
             Key milestones in my academic and professional journey
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {highlights.map((item, index) => (
-            <motion.div
+            <div
               key={item.title}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
               className="glass-card p-8 text-center group"
             >
               <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
@@ -68,7 +60,7 @@ const Highlights = () => {
               <h3 className="text-xl font-bold mb-2">{item.title}</h3>
               <p className="text-primary text-sm font-medium mb-4">{item.subtitle}</p>
               <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

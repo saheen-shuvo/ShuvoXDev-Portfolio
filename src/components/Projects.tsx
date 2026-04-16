@@ -86,22 +86,16 @@ const projects = [
 ];
 
 const ProjectCard = ({
-  project,
-  index,
+  project
 }: {
   project: (typeof projects)[0];
   index: number;
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ y: -8, transition: { duration: 0.3 } }}
       className="glass-card overflow-hidden group"
     >
       {/* Project Image Header */}
@@ -143,14 +137,12 @@ const ProjectCard = ({
         {/* Links */}
         <div className="flex flex-wrap gap-3">
           {project.links.map((link) => (
-            <motion.a
+            <a
               key={link.label}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-primary transition-colors"
-              whileHover={{ x: 3 }}
-              whileTap={{ scale: 0.95 }}
             >
               {link.label.includes("Repo") ? (
                 <Github size={14} />
@@ -158,17 +150,16 @@ const ProjectCard = ({
                 <ExternalLink size={14} />
               )}
               {link.label}
-            </motion.a>
+            </a>
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
 const Projects = () => {
   const headerRef = useRef(null);
-  const isHeaderInView = useInView(headerRef, { once: true, margin: "-100px" });
 
   return (
     <section id="projects" className="py-24 relative">
@@ -178,11 +169,8 @@ const Projects = () => {
       />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <motion.div
+        <div
           ref={headerRef}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <span className="text-primary font-mono text-sm mb-4 block">
@@ -195,7 +183,7 @@ const Projects = () => {
             A selection of projects that showcase my skills and passion for
             building
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (

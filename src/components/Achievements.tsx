@@ -80,15 +80,10 @@ const Achievements = () => {
       />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div ref={ref} className="text-center mb-16">
           <span className="text-primary font-mono text-sm mb-4 block">
-            <Trophy className="inline-block mr-2 w-4" /> Recognition <Trophy className="inline-block mr-2 w-4 ml-2" />
+            <Trophy className="inline-block mr-2 w-4" /> Recognition{" "}
+            <Trophy className="inline-block mr-2 w-4 ml-2" />
           </span>
           <h2 className="section-heading">
             <span className="gradient-text">Achievements</span> & Global
@@ -97,15 +92,10 @@ const Achievements = () => {
           <p className="text-muted-foreground max-w-xl mx-auto">
             Milestones, experiences, and accomplishments that shape my journey
           </p>
-        </motion.div>
+        </div>
 
         {/* Featured Achievement - Erasmus+ */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-12"
-        >
+        <div className="mb-12">
           <div className="glass-card p-8 md:p-10 max-w-4xl mx-auto relative overflow-hidden group">
             {/* Background Gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/5 opacity-50" />
@@ -143,35 +133,25 @@ const Achievements = () => {
 
                   <ul className="space-y-3">
                     {achievements[0].highlights?.map((highlight, idx) => (
-                      <motion.li
+                      <li
                         key={idx}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ duration: 0.4, delay: 0.4 + idx * 0.1 }}
                         className="flex items-start gap-3 text-foreground/90"
                       >
                         <span className="text-primary mt-1">✓</span>
                         <span>{highlight}</span>
-                      </motion.li>
+                      </li>
                     ))}
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
 
         {/* Other Achievement Cards */}
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {achievements.slice(1).map((achievement, index) => (
-            <motion.div
-              key={achievement.title}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.5 + index * 0.15 }}
-              whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="glass-card p-6 group"
-            >
+            <div key={achievement.title} className="glass-card p-6 group">
               <div
                 className={`w-14 h-14 mb-5 rounded-xl bg-gradient-to-br ${achievement.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
               >
@@ -200,7 +180,7 @@ const Achievements = () => {
                   More details coming soon...
                 </span>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

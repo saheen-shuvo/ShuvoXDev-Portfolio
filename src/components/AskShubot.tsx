@@ -93,29 +93,20 @@ const AskShubot = () => {
   return (
     <>
       {/* Floating Button */}
-      <motion.button
+      <button
         onClick={() => setIsOpen(true)}
         className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gradient-to-r from-primary to-accent shadow-lg flex items-center justify-center hover:scale-110 transition-transform ${
           isOpen ? "hidden" : ""
         }`}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ type: "spring", stiffness: 260, damping: 20 }}
       >
         <MessageCircle className="w-6 h-6 text-white" />
         <span className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full animate-pulse" />
-      </motion.button>
+      </button>
 
       {/* Chat Window */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ duration: 0.2 }}
+          <div
             className="fixed bottom-6 right-6 z-50 w-[380px] h-[520px] max-w-[calc(100vw-48px)] max-h-[calc(100vh-120px)] bg-card/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-border/50 flex flex-col overflow-hidden"
           >
             {/* Header */}
@@ -145,10 +136,8 @@ const AskShubot = () => {
             {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
               {messages.map((message) => (
-                <motion.div
+                <div
                   key={message.id}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
                   className={`flex gap-3 ${message.role === "user" ? "flex-row-reverse" : ""}`}
                 >
                   <div
@@ -175,13 +164,11 @@ const AskShubot = () => {
                       <ReactMarkdown>{message.content}</ReactMarkdown>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
 
               {isLoading && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
+                <div
                   className="flex gap-3"
                 >
                   <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
@@ -203,7 +190,7 @@ const AskShubot = () => {
                       />
                     </div>
                   </div>
-                </motion.div>
+                </div>
               )}
 
               <div ref={messagesEndRef} />
@@ -239,7 +226,7 @@ const AskShubot = () => {
                 Powered by AI • Answers based on Shuvo's portfolio
               </p>
             </div>
-          </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </>

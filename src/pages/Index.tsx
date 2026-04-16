@@ -13,33 +13,12 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CursorFollower from "@/components/CursorFollower";
 import GlobalBackground from "@/components/GlobalBackground";
-import LoadingScreen from "@/components/LoadingScreen";
 import AskShubot from "@/components/AskShubot";
-// import ParallaxShowcase from "@/components/ParallaxShowcase";
 
 const Index = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Wait for the page to fully load
-    const handleLoad = () => {
-      setTimeout(() => setIsLoading(false), 1500); // Minimum display time
-    };
-
-    if (document.readyState === "complete") {
-      handleLoad();
-    } else {
-      window.addEventListener("load", handleLoad);
-      return () => window.removeEventListener("load", handleLoad);
-    }
-  }, []);
 
   return (
     <>
-      <AnimatePresence mode="wait">
-        <LoadingScreen isLoading={isLoading} />
-      </AnimatePresence>
-      
       <div className="min-h-screen bg-background overflow-x-hidden relative ">
         <GlobalBackground />
         <CursorFollower />

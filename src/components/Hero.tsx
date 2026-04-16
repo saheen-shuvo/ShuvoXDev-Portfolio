@@ -34,35 +34,26 @@ const Hero = () => {
       id="home"
       className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 "
     >
-
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex flex-col-reverse pt-8 lg:pt-0 lg:flex-row items-center justify-between gap-12 lg:gap-16">
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left max-w-2xl">
-            <div
-              className="mb-6"
-            >
+            <div className="mb-6">
               <span className="text-primary font-mono text-sm md:text-base">
                 Hello, I'm
               </span>
             </div>
 
-            <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
-            >
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               <span className="gradient-text">Saheen Alam</span>{" "}
               <span className="text-foreground">Shuvo</span>
             </h1>
 
-            <p
-              className="text-lg md:text-xl text-accent font-medium mb-6 font-mono"
-            >
+            <p className="text-lg md:text-xl text-accent font-medium mb-6 font-mono">
               Full Stack Developer | Competitive Programmer
             </p>
 
-            <p
-              className="text-muted-foreground text-base md:text-lg mb-10 leading-relaxed"
-            >
+            <p className="text-muted-foreground text-base md:text-lg mb-10 leading-relaxed">
               I’m a Full Stack web developer specializing in the MERN stack,
               with a strong passion for problem-solving and competitive
               programming. I build scalable, user-friendly web applications and
@@ -70,9 +61,7 @@ const Hero = () => {
               solutions.
             </p>
 
-            <div
-              className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10"
-            >
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
               <RippleButton
                 onClick={handleScrollToProjects}
                 variant="primary"
@@ -89,59 +78,34 @@ const Hero = () => {
               </RippleButton>
             </div>
 
-            <div
-              className="flex items-center justify-center lg:justify-start gap-6"
-            >
-              <motion.a
+            <div className="flex items-center justify-center lg:justify-start gap-6">
+              <a
                 href="https://github.com/saheen-shuvo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                whileHover={{
-                  y: -3,
-                  scale: 1.1,
-                }}
-                whileTap={{
-                  scale: 0.95,
-                }}
               >
                 <Github size={24} />
-              </motion.a>
-              <motion.a
+              </a>
+              <a
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                whileHover={{
-                  y: -3,
-                  scale: 1.1,
-                }}
-                whileTap={{
-                  scale: 0.95,
-                }}
               >
                 <Linkedin size={24} />
-              </motion.a>
-              <motion.a
+              </a>
+              <a
                 href="mailto:saheenshuvo182@gmail.com"
                 className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                whileHover={{
-                  y: -3,
-                  scale: 1.1,
-                }}
-                whileTap={{
-                  scale: 0.95,
-                }}
               >
                 <Mail size={24} />
-              </motion.a>
+              </a>
             </div>
           </div>
 
           {/* Profile Photo */}
-          <div
-            className="flex-shrink-0"
-          >
+          <div className="flex-shrink-0">
             <div className="relative">
               {/* Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/50 to-accent/50 rounded-full blur-3xl opacity-40 scale-110" />
@@ -160,33 +124,16 @@ const Hero = () => {
               </div>
 
               {/* Decorative Ring */}
-              <div
-                className="absolute -inset-4 border-3 border-dashed border-primary/20 rounded-full"
-              />
+              <div className="absolute -inset-4 border-3 border-dashed border-primary/20 rounded-full" />
             </div>
           </div>
         </div>
 
-        <motion.div
-          initial={{
-            opacity: 0,
-          }}
-          animate={{
-            opacity: 1,
-          }}
-          transition={{
-            duration: 1,
-            delay: 1,
-          }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={reduceMotion ? {} : { y: [0, 10, 0] }}
-            transition={reduceMotion ? {} : { duration: 2, repeat: Infinity }}
-          >
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
+          <div>
             <ArrowDown size={24} />
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

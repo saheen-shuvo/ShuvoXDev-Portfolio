@@ -36,11 +36,8 @@ const Contact = () => {
       <div className="floating-blob w-80 h-80 bg-accent/15 top-0 right-1/4" style={{ animationDelay: "-15s" }} />
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <motion.div
+        <div
           ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <span className="text-primary font-mono text-sm mb-4 block">Get in touch</span>
@@ -50,14 +47,11 @@ const Contact = () => {
           <p className="text-muted-foreground max-w-xl mx-auto">
             Have a project in mind or want to chat? I'd love to hear from you!
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+          <div
           >
             <h3 className="text-2xl font-bold mb-6">Contact Info</h3>
             <p className="text-muted-foreground mb-8">
@@ -66,15 +60,11 @@ const Contact = () => {
 
             <div className="space-y-4">
               {socialLinks.map((link, index) => (
-                <motion.a
+                <a
                   key={link.label}
                   href={link.href}
                   target={link.href.startsWith("mailto") ? undefined : "_blank"}
                   rel="noopener noreferrer"
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                  whileHover={{ x: 10, transition: { duration: 0.2 } }}
                   className="glass-card p-4 flex items-center gap-4 group cursor-pointer"
                 >
                   <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
@@ -85,16 +75,13 @@ const Contact = () => {
                     <p className="font-medium">{link.value}</p>
                   </div>
                   <ArrowRight size={18} className="text-muted-foreground group-hover:text-primary transition-colors" />
-                </motion.a>
+                </a>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
+          <div
           >
             <form onSubmit={handleSubmit} className="glass-card p-8">
               <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
@@ -166,7 +153,7 @@ const Contact = () => {
                 </motion.button>
               </div>
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
