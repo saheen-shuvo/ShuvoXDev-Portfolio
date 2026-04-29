@@ -22,7 +22,7 @@ const Footer = () => {
           <p
             className="text-muted-foreground hover:text-primary transition-colors text-sm"
           >
-            Last Updated: 20 February 2026
+            Last Updated: 28 February 2026
           </p>
         </div>
 
